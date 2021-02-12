@@ -130,3 +130,6 @@ dmypy.json
 
 # Configuration file
 conf.ini
+
+#All csv files
+*.csv
