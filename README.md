@@ -2,7 +2,7 @@
 
 The objective of this web scraping project was to generate insights from the top podcasts in the United States. 
 
-To collect the podcast data, I scraped a [third-party website]('https://www.chartable.com'). Included in the data was:
+To collect the podcast data, I scraped a [third-party website](https://www.chartable.com). Included in the data was:
 
     1. Rank number on respective platform (ex: Spotify)
     2. Name of the podcast
@@ -13,6 +13,6 @@ To collect the podcast data, I scraped a [third-party website]('https://www.char
     7. How many users have rated the podcast
     8. The date each individual episode was released
 
-For more information, connect with me on [Linkedin]('https://linkedin.com/in/douglas-pizac-ms').
+For more information, connect with me on [Linkedin](https://linkedin.com/in/douglas-pizac-ms).
 
-![Podcast]('https://img.freepik.com/free-vector/podcast-concept-illustration_114360-954.jpg?size=626&ext=jpg&ga=GA1.2.1165230996.1611879625')
+![Podcast](https://img.freepik.com/free-vector/podcast-concept-illustration_114360-954.jpg?size=626&ext=jpg&ga=GA1.2.1165230996.1611879625)
