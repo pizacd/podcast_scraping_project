@@ -16,6 +16,7 @@ chartable_merge(chart_file, podcast_file): joins chart & data csvs. Also cleans 
 
 from scipy import stats
 import pandas as pd
+import numpy as np 
 
 
 
@@ -33,15 +34,16 @@ def test_rankings(ranks_df,num_times):
         
         #if variances different, T-test will use if statement. Otherwise, T-test will use else statement
         bartletts, bart_p = stats.bartlett(ranks_sample['apple_rank'], ranks_sample['spotify_rank'])
-        if bart_p <.05:
-            T, T_p =  stats.ttest_ind(ranks_sample['apple_rank'],ranks_sample['spotify_rank'],equal_var=False)
-        elif bart_p >.05:
-            T, T_p = stats.ttest_ind(ranks_sample['apple_rank'],ranks_sample['spotify_rank'],equal_var=True)
+        T, T_p = stats.ttest_ind(ranks_sample['apple_rank'],ranks_sample['spotify_rank'],equal_var=bart_p >.05)
+        # if bart_p <.05:
+        #     T, T_p =  stats.ttest_ind(ranks_sample['apple_rank'],ranks_sample['spotify_rank'],equal_var=False)
+        # elif bart_p >.05:
+        #     T, T_p = stats.ttest_ind(ranks_sample['apple_rank'],ranks_sample['spotify_rank'],equal_var=True)
         
         p_values.append(T_p)
 
     #calculate the average p-value of the tests conducted
-    final_p = sum(p_values)/len(p_values)
+    final_p = np.mean(p_values)
     if final_p >0.05:
         print('No significant difference in rank across platforms!')
     else:
